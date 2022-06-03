@@ -1,0 +1,56 @@
+body {
+  background: #ff3939;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.wrapper .container {
+  flex-basis: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.wrapper .container .input-container {
+  position: relative;
+  width: 300px;
+  height: 65px;
+  border-radius: 5px;
+  font-size: 20px;
+  background: #fff;
+}
+
+.wrapper .container .input-container input.search-box {
+  position: absolute;
+  font-size: inherit;
+  padding: 0px 45px 0px 18px;
+  height: inherit;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: inherit;
+  color: #ff3939;
+  background: transparent;
+  z-index: 1;
+}
+
+.wrapper .container .input-container span.autocomplete-text {
+  position: absolute;
+  font-size: inherit;
+  padding: 0px 45px 0px 18px;
+  top: 0;
+  left: 0;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  font-family: Arial;
+  width: inherit;
+  color: #1da1f2;
+}
+
+.wrapper .container .input-container span.hide {
+  display: none;
+}
