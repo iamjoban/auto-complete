@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <title>Auto complete</title>
+  <link href="./styles/index.css" rel="stylesheet" rel="prefetch" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+    </div>
+  </div>
+</body>
+
+<script src="./scripts/suggestion-database.js" async></script>
+<script src="./scripts/plugins/autocomplete.js" async></script>
+<script>
+  function compareString(first, second) {
+    return first.split('', second.length).join('') === second ? second : null;
+  }
+
+  function suggestionFilterHandler(term) {
+    return wordData.filter(item => compareString(item, term))
+      .sort((a, b) => b.length - a.length);
+  }
+
+  const autocompleteBox = new AutoComplete({ uniqueFieldId: '12', withDebounce: true, debounceTime: 50 });
+  autocompleteBox.registerSuggestionFilterHandler(suggestionFilterHandler);
+  autocompleteBox.render(document.getElementsByClassName('container')[0]);
+</script>
+
+</html>
